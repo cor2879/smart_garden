@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Garden Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <h1>Smart Garden Dashboard</h1>
+  <div id="dataDisplay">
+    <p><strong>TDS:</strong> <span id="tds">--</span> ppm</p>
+    <p><strong>pH:</strong> <span id="ph">--</span></p>
+  </div>
+  <script>
+    async function fetchData() {
+      const res = await fetch('/api/reading');
+      const data = await res.json();
+      document.getElementById('tds').textContent = data.tds;
+      document.getElementById('ph').textContent = data.ph;
+    }
+    setInterval(fetchData, 5000);
+    fetchData();
+  </script>
+</body>
+</html>

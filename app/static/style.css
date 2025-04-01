@@ -1,0 +1,13 @@
+body {
+    background-color: #121212;
+    color: #f1f1c1;
+    font-family: 'Courier New', monospace;
+    padding: 2rem;
+  }
+  h1 {
+    font-size: 2rem;
+    color: #ffcc00;
+  }
+  #dataDisplay p {
+    font-size: 1.2rem;
+  }
